@@ -1,4 +1,5 @@
 const express = require('express')
+const dotenv = require('dotenv').config()
 const app = express()
 const cors = require('cors')
 
@@ -12,16 +13,16 @@ app.use(cors({
 }))
 
 const tipoProyecto = require('./routes/tipoProyecto')
-/*const estado = require('./routes/estado')
-const usuario = require('./routes/usuario')
-const marca = require('./routes/marca')
-const inventario = require('./routes/inventario')*/
+const etapa = require('./routes/etapa')
+const cliente = require('./routes/cliente')
+const universidad = require('./routes/universidad')
+// const inventario = require('./routes/inventario')
 
 // middlewares
-app.use('/api/tipoproyectos', tipoProyecto)
-/*app.use('/api/estados', estado)
-app.use('/api/usuarios', usuario)
-app.use('/api/marcas', marca)
-app.use('/api/inventarios', inventario)*/
+app.use('/api/tiposproyectos', tipoProyecto)
+app.use('/api/etapas', etapa)
+app.use('/api/clientes', cliente)
+app.use('/api/universidades', universidad)
+// app.use('/api/inventarios', inventario)
 
 module.exports = app

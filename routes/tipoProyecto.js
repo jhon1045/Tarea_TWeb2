@@ -1,18 +1,20 @@
-// routes/tipoProyecto.js
-const { Router } = require('express');
-const { createTipoProyecto, 
-getTipoProyecto,
-updateTipoProyectoByID } = require('../controllers/tipoProyecto');
+const { Router } = require('express')
+const { 
+    createTipoProyecto, 
+    getTipoProyectos,
+    updateTipoProyectoByID
+} =
+ require('../controllers/tipoProyecto')
 
-const router = Router();
+const router = Router()
 
-// Crear un nuevo tipo de proyecto
-router.post('/', createTipoProyecto);
+// crear
+router.post('/', createTipoProyecto)
 
-// Consultar todos los tipos de proyecto
-router.get('/', getTipoProyecto);
+// consultar todos
+router.get('/', getTipoProyectos)
 
-// Actualizar un tipo de proyecto por ID
-router.put('/:id', updateTipoProyectoByID);
+// actualizar
+router.put('/:id', updateTipoProyectoByID)
 
 module.exports = router;
