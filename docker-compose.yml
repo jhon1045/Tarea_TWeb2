@@ -1,14 +1,16 @@
-version : "3.7"
-services :
-  monolito :
-    container_name : monolito
-    image : monolito:v1
-    build : 
-      context : .
-    ports : 
-      - "4001:4001"
-    networks : 
-     - proyectos-app
+version: "3.7"
 
-networks : 
-  proyectos-app :
+services:
+  monolito:
+    container_name: monolito
+    image: monolito:v2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    networks:
+      - proyectos-app
+
+networks:
+  proyectos-app:
