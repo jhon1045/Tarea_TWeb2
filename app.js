@@ -20,7 +20,7 @@ const inventario = require('./routes/inventario')*/
 
 // middlewares
 app.use('/api/tipoproyectos', tipoProyecto)
-app.use('/api/proyectos', proyecto)
+// app.use('/api/proyectos', proyecto)
 // app.use('/api/usuarios', usuario)
 // app.use('/api/marcas', marca)
 // app.use('/api/inventarios', inventario)

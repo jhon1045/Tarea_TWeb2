@@ -18,6 +18,78 @@ services :
     networks : 
     - proyectos-app
 
+  monolito-back-3 :
+    container_name : monolito-back-3
+    image : monolito-back:v1
+    build : 
+      context : .
+    ports : 
+      - "2050:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-4 :
+    container_name : monolito-back-4
+    image : monolito-back:v1
+    ports : 
+      - "5550:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-5 :
+    container_name : monolito-back-5
+    image : monolito-back:v1
+    build : 
+      context : .
+    ports : 
+      - "6630:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-6 :
+    container_name : monolito-back-6
+    image : monolito-back:v1
+    ports : 
+      - "4444:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-7 :
+    container_name : monolito-back-7    
+    image : monolito-back:v1
+    build : 
+      context : .
+    ports : 
+      - "7777:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-8 :
+    container_name : monolito-back-8
+    image : monolito-back:v1
+    ports : 
+      - "8888:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-9 :
+    container_name : monolito-back-9
+    image : monolito-back:v1
+    build : 
+      context : .
+    ports : 
+      - "1234:3001"
+    networks : 
+    - proyectos-app
+
+  monolito-back-10 :
+    container_name : monolito-back-10
+    image : monolito-back:v1
+    ports : 
+      - "2222:3001"
+    networks : 
+    - proyectos-app
+
 # hacer mas instacias o contenedorsitos
 
   balanceador-carga:
