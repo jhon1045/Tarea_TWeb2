@@ -1,16 +1,34 @@
-version: "3.7"
-
-services:
-  monolito:
-    container_name: monolito
-    image: monolito:v2
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
+version : "27.2"
+services :
+  monolito-back :
+    container_name : monolito-back
+    image : monolito-back:v1
+    build : 
+      context : .
+    ports : 
       - "3001:3001"
-    networks:
-      - proyectos-app
+    networks : 
+    - proyectos-app
 
-networks:
-  proyectos-app:
+  monolito-back-2 :
+    container_name : monolito-back-2
+    image : monolito-back:v1
+    ports : 
+      - "4450:3001"
+    networks : 
+    - proyectos-app
+
+# hacer mas instacias o contenedorsitos
+
+  balanceador-carga:
+    container_name : balanceador-carga
+    image : balanceador-carga:v1
+    build : 
+      context : ./balanceador
+    ports : 
+      - "3003:80"
+    networks : 
+    - proyectos-app
+
+networks : 
+  proyectos-app :
