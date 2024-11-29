@@ -15,7 +15,8 @@ pipeline {
             withCredentials([
               string(credentialsId: 'MONGO_URI', variable: 'MONGO_URI')
             ]) {
-              sh 'docker-compose up -d'
+              sh 'docker-compose down -v'
+              sh 'docker-compose up -d --build'
             }
         }
       }
