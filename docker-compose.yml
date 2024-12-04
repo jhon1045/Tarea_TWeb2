@@ -1,16 +1,20 @@
-version : "3.7"
-services :
-  monolito :
-    container_name : monolito
-    image : monolito:v1
-    build : 
-      context : .
-    ports : 
-      - "4001:4001"
-    networks : 
-     - proyectos-app
-    environment:
-      MONGO_URI: ${MONGO_URI}
+version: "3.7"
+services:
+  jenkins:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    user: root
+    restart: always
+    networks:
+      - proyectos-app
 
-networks : 
-  proyectos-app :
+networks:
+  proyectos-app:
+
+volumes:
+  jenkins_home:
